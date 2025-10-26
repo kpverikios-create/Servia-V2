@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="el" style="background-color:#0f172a;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SERVIA · Υποψήφιοι διαθέσιμοι τώρα</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --yellow:#facc15;
+        --bg:#0f172a;
+        --text:#f8fafc;
+        --muted:#94a3b8;
+        --card:#1e2536;
+        --radius:16px;
+        --border:rgba(148,163,184,0.2);
+      }
+      *{box-sizing:border-box;-webkit-font-smoothing:antialiased;margin:0;}
+      body{
+        background:var(--bg);
+        color:var(--text);
+        font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+        line-height:1.45;
+        min-height:100vh;
+        padding:24px 20px 60px;
+        display:grid;
+        gap:24px;
+        max-width:1280px;
+        margin:0 auto;
+      }
+
+      header{
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+        justify-content:space-between;
+        row-gap:16px;
+      }
+      .brand{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        color:var(--text);
+        font-size:1.1rem;
+        font-weight:600;
+        text-decoration:none;
+        letter-spacing:-0.03em;
+      }
+      .logo-badge{
+        background:var(--yellow);
+        color:#000;
+        font-weight:600;
+        font-size:0.9rem;
+        line-height:1;
+        padding:10px 12px;
+        border-radius:10px;
+        border:2px solid var(--yellow);
+        box-shadow:0 20px 40px rgba(250,204,21,0.4);
+      }
+      nav{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        flex-wrap:wrap;
+      }
+      nav a{
+        color:var(--text);
+        font-size:0.9rem;
+        font-weight:500;
+        text-decoration:none;
+      }
+      .cta-post{
+        background:var(--yellow);
+        color:#000;
+        font-weight:600;
+        font-size:0.9rem;
+        line-height:1.1;
+        padding:10px 14px;
+        border-radius:10px;
+        border:2px solid var(--yellow);
+        text-decoration:none;
+        box-shadow:0 20px 40px rgba(250,204,21,0.4);
+      }
+
+      .headline-block{
+        display:grid;
+        gap:12px;
+        max-width:800px;
+      }
+      .page-title{
+        font-size:1.4rem;
+        font-weight:600;
+        line-height:1.25;
+        letter-spacing:-0.04em;
+        color:var(--text);
+      }
+      .page-desc{
+        font-size:0.9rem;
+        color:var(--muted);
+        line-height:1.4;
+      }
+
+      .filter-bar{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+      }
+      .filter-bar select{
+        background:#0f172a;
+        color:var(--text);
+        font-size:0.9rem;
+        font-weight:500;
+        border-radius:8px;
+        border:1px solid var(--border);
+        padding:10px 12px;
+        outline:none;
+      }
+
+      .talent-grid{
+        display:grid;
+        gap:20px;
+        grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));
+      }
+      .talent-card{
+        background:var(--card);
+        border-radius:var(--radius);
+        border:1px solid var(--border);
+        box-shadow:0 24px 48px rgba(0,0,0,0.6);
+        padding:20px;
+        display:grid;
+        gap:8px;
+      }
+      .talent-name{
+        font-size:1rem;
+        font-weight:600;
+        color:var(--text);
+        line-height:1.3;
+      }
+      .talent-role{
+        font-size:0.9rem;
+        font-weight:500;
+        color:var(--text);
+      }
+      .talent-meta{
+        font-size:0.8rem;
+        color:var(--muted);
+        line-height:1.4;
+      }
+      .chip{
+        background:var(--yellow);
+        color:#000;
+        font-size:0.75rem;
+        font-weight:600;
+        border-radius:8px;
+        border:2px solid var(--yellow);
+        padding:6px 8px;
+        width:max-content;
+        box-shadow:0 16px 32px rgba(250,204,21,0.4);
+      }
+
+      .contact-row{
+        font-size:0.8rem;
+        color:var(--text);
+        line-height:1.4;
+        display:grid;
+        gap:4px;
+        background:#0f172a;
+        border:1px solid var(--border);
+        border-radius:10px;
+        padding:12px;
+      }
+      .contact-hint{
+        font-size:0.7rem;
+        color:var(--muted);
+        line-height:1.4;
+      }
+      .pro-lock{
+        font-weight:600;
+        color:var(--yellow);
+      }
+
+      footer{
+        border-top:1px solid var(--border);
+        padding-top:24px;
+        color:var(--muted);
+        font-size:0.75rem;
+        line-height:1.4;
+        text-align:left;
+      }
+      footer a{
+        color:var(--yellow);
+        text-decoration:none;
+        font-weight:600;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <a class="brand" href="index.html">
+        <div class="logo-badge">SERVIA</div>
+        <div>Πρόσβαση σε προσωπικό εστίασης</div>
+      </a>
+
+      <nav>
+        <a href="index.html#pricing">Τιμές</a>
+        <a href="profile.html">Προσθήκη προφίλ</a>
+        <div class="cta-post">15€/μήνα PRO</div>
+      </nav>
+    </header>
+
+    <section class="headline-block">
+      <div class="page-title">Υποψήφιοι διαθέσιμοι τώρα</div>
+      <div class="page-desc">
+        Φιλτράρισε και βρες άτομα για bar, service, κουζίνα, reception.
+        Οι πιο κάτω κάρτες είναι πραγματικά προφίλ (χωρίς βιογραφικό).
+      </div>
+    </section>
+
+    <section class="filter-bar">
+      <select>
+        <option>Ρόλος: Όλοι</option>
+        <option>Barista</option>
+        <option>Σερβιτόρος / Σερβιτόρα</option>
+        <option>Bartender</option>
+        <option>Κουζίνα</option>
+        <option>Reception</option>
+      </select>
+
+      <select>
+        <option>Τοποθεσία: Όλες</option>
+        <option>Αθήνα</option>
+        <option>Θεσσαλονίκη</option>
+        <option>Μύκονος</option>
+        <option>Ρόδος</option>
+      </select>
+
+      <select>
+        <option>Διαθεσιμότητα: Όλες</option>
+        <option>Full-time</option>
+        <option>Μόνο βράδυ</option>
+        <option>Σεζόν</option>
+        <option>Σαββατοκύριακο</option>
+      </select>
+    </section>
+
+    <section class="talent-grid">
+
+      <article class="talent-card">
+        <div class="talent-name">Μαρία Κ.</div>
+        <div class="talent-role">Barista · Αθήνα Κέντρο</div>
+        <div class="talent-meta">
+          3 χρόνια εμπειρία<br/>
+          Full-time πρωινές βάρδιες<br/>
+          Μπορώ να ξεκινήσω άμεσα
+        </div>
+        <div class="chip">Διαθέσιμη τώρα</div>
+
+        <div class="contact-row">
+          <div><span class="pro-lock">PRO μόνο:</span> WhatsApp / Τηλέφωνο υποψηφίου</div>
+          <div class="contact-hint">
+            Αναβάθμισε σε PRO (15€/μήνα) για άμεση επικοινωνία με τον εργαζόμενο.
+          </div>
+        </div>
+      </article>
+
+      <article class="talent-card">
+        <div class="talent-name">Γιάννης Π.</div>
+        <div class="talent-role">Σερβιτόρος · Μύκονος</div>
+        <div class="talent-meta">
+          Σεζόν · Διαμονή προσφέρεται<br/>
+          Μιλάω Αγγλικά<br/>
+          Θέλω βραδινές βάρδιες beach bar
+        </div>
+        <div class="chip">Σεζόν 2025</div>
+
+        <div class="contact-row">
+          <div><span class="pro-lock">PRO μόνο:</span> WhatsApp / Τηλέφωνο υποψηφίου</div>
+          <div class="contact-hint">
+            Με PRO βλέπεις άμεσα στοιχεία και κλείνεις άτομο χωρίς μεσαζόντα.
+          </div>
+        </div>
+      </article>
+
+      <article class="talent-card">
+        <div class="talent-name">Ελένη Μ.</div>
+        <div class="talent-role">Κουζίνα / Line Cook · Ρόδος</div>
+        <div class="talent-meta">
+          2 χρόνια εμπειρία σε ξενοδοχείο 4★<br/>
+          Full-time<br/>
+          Διαμονή εντός ξενοδοχείου
+        </div>
+        <div class="chip">Κουζίνα</div>
+
+        <div class="contact-row">
+          <div><span class="pro-lock">PRO μόνο:</span> WhatsApp / Τηλέφωνο υποψηφίου</div>
+          <div class="contact-hint">
+            Απόκτησε PRO για να μιλήσεις απευθείας και να κλείσεις άτομο σήμερα.
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <div>Η SERVIA είναι δίκτυο πρόσληψης ειδικά για καφέ, μπαρ, εστιατόρια και ξενοδοχεία.</div>
+      <div style="margin-top:8px;">
+        Συνδρομή BASIC 10€/μήνα · PRO 15€/μήνα.
+        <a href="index.html#pricing">Δες πακέτα →</a>
+      </div>
+      <div style="margin-top:16px;">
+        <a href="mailto:contact@servia.jobs">contact@servia.jobs</a> · Ελλάδα 2025
+      </div>
+      <div style="margin-top:16px;">
+        <a href="index.html">← Αρχική</a> ·
+        <a href="profile.html">Πρόσθεσε το προφίλ σου</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

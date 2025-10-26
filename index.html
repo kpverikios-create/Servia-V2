@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="el" style="background-color:#0f172a;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SERVIA · Πρόσλαβε άμεσα προσωπικό εστίασης</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --yellow:#facc15;
+        --bg:#0f172a;
+        --text:#f8fafc;
+        --muted:#94a3b8;
+        --card:#1e2536;
+        --radius:16px;
+        --border:rgba(148,163,184,0.2);
+      }
+      *{box-sizing:border-box;-webkit-font-smoothing:antialiased;margin:0;}
+      body{
+        background:var(--bg);
+        color:var(--text);
+        font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+        line-height:1.45;
+        display:flex;
+        flex-direction:column;
+        min-height:100vh;
+      }
+      header{
+        width:100%;
+        max-width:1280px;
+        margin:0 auto;
+        padding:24px 20px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        row-gap:16px;
+      }
+      .brand{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        color:var(--text);
+        font-size:1.1rem;
+        font-weight:600;
+        text-decoration:none;
+        letter-spacing:-0.03em;
+      }
+      .logo-badge{
+        background:var(--yellow);
+        color:#000;
+        font-weight:600;
+        font-size:0.9rem;
+        line-height:1;
+        padding:10px 12px;
+        border-radius:10px;
+        border:2px solid var(--yellow);
+        box-shadow:0 20px 40px rgba(250,204,21,0.4);
+      }
+      nav{
+        display:flex;
+        align-items:center;
+        gap:20px;
+        flex-wrap:wrap;
+      }
+      nav a{
+        color:var(--text);
+        font-size:0.9rem;
+        font-weight:500;
+        text-decoration:none;
+      }
+      .cta-post{
+        background:var(--yellow);
+        color:#000;
+        font-weight:600;
+        font-size:0.9rem;
+        line-height:1.1;
+        padding:10px 14px;
+        border-radius:10px;
+        border:2px solid var(--yellow);
+        text-decoration:none;
+        box-shadow:0 20px 40px rgba(250,204,21,0.4);
+      }
+
+      main{
+        flex:1;
+        width:100%;
+        max-width:1280px;
+        margin:0 auto;
+        padding:24px 20px 80px;
+        display:grid;
+        gap:64px;
+      }
+
+      /* HERO */
+      .hero{
+        display:grid;
+        gap:24px;
+        max-width:800px;
+      }
+      .eyebrow{
+        display:inline-flex;
+        flex-wrap:wrap;
+        align-items:center;
+        gap:8px;
+        background:rgba(250,204,21,0.1);
+        border:1px solid rgba(250,204,21,0.4);
+        color:var(--yellow);
+        font-size:0.8rem;
+        font-weight:600;
+        padding:8px 12px;
+        border-radius:999px;
+        width:max-content;
+      }
+      .hero-headline{
+        font-size:clamp(2rem,1vw+1.5rem,2.6rem);
+        font-weight:600;
+        line-height:1.15;
+        letter-spacing:-0.04em;
+        color:var(--text);
+      }
+      .hero-accent{color:var(--yellow);}
+      .hero-copy{
+        color:var(--muted);
+        font-size:1rem;
+        line-height:1.5;
+        max-width:600px;
+      }
+      .hero-ctas{
+        display:flex;
+        flex-wrap:wrap;
+        gap:16px;
+        margin-top:8px;
+      }
+      .btn-yellow{
+        background:var(--yellow);
+        color:#000;
+        font-weight:600;
+        font-size:1rem;
+        padding:12px 20px;
+        border-radius:10px;
+        border:2px solid var(--yellow);
+        text-decoration:none;
+        line-height:1.1;
+        min-width:160px;
+        text-align:center;
+        box-shadow:0 20px 40px rgba(250,204,21,0.4);
+      }
+      .btn-outline{
+        background:transparent;
+        border:2px solid var(--card);
+        color:var(--text);
+        font-weight:600;
+        font-size:1rem;
+        padding:12px 20px;
+        border-radius:10px;
+        text-decoration:none;
+        line-height:1.1;
+        min-width:160px;
+        text-align:center;
+      }
+
+      /* ΕΝΟΤΗΤΑ ΥΠΟΨΗΦΙΟΙ */
+      .section-block{
+        display:grid;
+        gap:24px;
+      }
+      .section-head{
+        font-size:1.2rem;
+        font-weight:600;
+        color:var(--text);
+        line-height:1.3;
+        letter-spacing:-0.03em;
+      }
+      .section-sub{
+        color:var(--muted);
+        font-size:0.9rem;
+        line-height:1.4;
+        max-width:600px;
+      }
+      .jobs-grid{
+        display:grid;
+        gap:20px;
+        grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));
+      }
+      .job-card{
+        background:var(--card);
+        border-radius:var(--radius);
+        border:1px solid var(--border);
+        padding:20px;
+        box-shadow:0 24px 48px rgba(0,0,0,0.6);
+        display:grid;
+        gap:8px;
+      }
+      .job-title{
+        color:var(--text);
+        font-size:1rem;
+        font-weight:600;
+        line-height:1.3;
+      }
+      .job-place{
+        color:var(--text);
+        font-size:0.9rem;
+        font-weight:500;
+        line-height:1.3;
+      }
+      .job-meta{
+        color:var(--muted);
+        font-size:0.8rem;
+        line-height:1.4;
+      }
+      .chip{
+        display:inline-block;
+        background:var(--yellow);
+        color:#000;
+        font-size:0.75rem;
+        font-weight:600;
+        border-radius:8px;
+        border:2px solid var(--yellow);
+        padding:6px 8px;
+        width:max-content;
+        box-shadow:0 16px 32px rgba(250,204,21,0.4);
+      }
+
+      /* PRICING */
+      .pricing-grid{
+        display:grid;
+        gap:20px;
+        grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));
+      }
+      .price-card{
+        background:var(--card);
+        border-radius:var(--radius);
+        border:2px solid var(--border);
+        padding:20px;
+        box-shadow:0 24px 48px rgba(0,0,0,0.6);
+        display:grid;
+        gap:16px;
+      }
+      .price-plan{
+        font-size:0.8rem;
+        font-weight:600;
+        color:var(--yellow);
+        text-transform:uppercase;
+        letter-spacing:-0.02em;
+      }
+      .price-amount{
+        font-size:1.8rem;
+        font-weight:600;
+        color:var(--text);
+        line-height:1.2;
+        letter-spacing:-0.03em;
+      }
+      .price-desc{
+        color:var(--muted);
+        font-size:0.9rem;
+        line-height:1.4;
+        min-height:3em;
+      }
+      .feature-list{
+        color:var(--text);
+        font-size:0.85rem;
+        line-height:1.4;
+      }
+      .feature-list span{
+        color:var(--yellow);
+        font-weight:600;
+      }
+      .price-btn{
+        background:var(--yellow);
+        color:#000;
+        font-weight:600;
+        font-size:0.9rem;
+        line-height:1.1;
+        padding:10px 14px;
+        border-radius:10px;
+        border:2px solid var(--yellow);
+        text-decoration:none;
+        text-align:center;
+        box-shadow:0 20px 40px rgba(250,204,21,0.4);
+      }
+
+      footer{
+        border-top:1px solid var(--border);
+        margin-top:40px;
+        padding:24px 20px 40px;
+        color:var(--muted);
+        font-size:0.8rem;
+        line-height:1.4;
+        max-width:1280px;
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .footer-top{
+        color:var(--text);
+        font-weight:600;
+        margin-bottom:8px;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        flex-wrap:wrap;
+      }
+      .footer-links{
+        display:flex;
+        flex-wrap:wrap;
+        gap:16px;
+        font-size:0.8rem;
+      }
+      .footer-links a{
+        color:var(--muted);
+        text-decoration:none;
+      }
+
+      @media(max-width:600px){
+        .hero-headline{font-size:2rem;}
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header>
+      <a class="brand" href="index.html">
+        <div class="logo-badge">SERVIA</div>
+        <div>Δίκτυο Εργασίας Εστίασης</div>
+      </a>
+
+      <nav>
+        <a href="talent.html">Υποψήφιοι</a>
+        <a href="#pricing">Τιμές</a>
+        <a href="profile.html">Φτιάξε προφίλ</a>
+        <div class="cta-post">Ελλάδα</div>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="eyebrow">
+          <span>⚡ Ζωντανό πιλοτικό</span>
+          <span>Καφέ · Μπαρ · Εστιατόρια · Ξενοδοχεία</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Βρες προσωπικό <span class="hero-accent">άμεσα</span>.<br/>
+          Barista, σερβιτόρος, μπάρμαν, κουζίνα —<br/>
+          σε ώρες, όχι σε εβδομάδες.
+        </h1>
+
+        <p class="hero-copy">
+          Η SERVIA είναι το επαγγελματικό δίκτυο μόνο για εστίαση και φιλοξενία.
+          Οι εργαζόμενοι φτιάχνουν προφίλ χωρίς βιογραφικό — μόνο εμπειρία,
+          περιοχή και διαθεσιμότητα. Τα μαγαζιά βρίσκουν άμεσα άτομα.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn-yellow" href="talent.html">Δες Υποψηφίους</a>
+          <a class="btn-outline" href="profile.html">Φτιάξε Προφίλ</a>
+        </div>
+      </section>
+
+      <!-- ΕΝΟΤΗΤΑ: ΕΝΔΕΙΚΤΙΚΟΙ ΥΠΟΨΗΦΙΟΙ -->
+      <section id="roles" class="section-block">
+        <div>
+          <div class="section-head">Έτοιμοι για δουλειά τώρα</div>
+          <div class="section-sub">
+            Παραδείγματα ενεργών προφίλ στην πλατφόρμα (Αθήνα & νησιά).
+          </div>
+        </div>
+
+        <div class="jobs-grid">
+          <div class="job-card">
+            <div class="job-title">Μαρία Κ.</div>
+            <div class="job-place">Barista · Κέντρο Αθήνας</div>
+            <div class="job-meta">3 χρόνια εμπειρία · Full-time πρωί</div>
+            <div class="chip">Διαθέσιμη άμεσα</div>
+          </div>
+
+          <div class="job-card">
+            <div class="job-title">Γιάννης Π.</div>
+            <div class="job-place">Σερβιτόρος · Μύκονος</div>
+            <div class="job-meta">Σεζόν · Σπίτι παρέχεται</div>
+            <div class="chip">Σεζόν 2025</div>
+          </div>
+
+          <div class="job-card">
+            <div class="job-title">Ελένη Μ.</div>
+            <div class="job-place">Κουζίνα / Line Cook · Ρόδος</div>
+            <div class="job-meta">Full-time · Διαμονή μέσα</div>
+            <div class="chip">Κουζίνα</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="section-block">
+        <div>
+          <div class="section-head">Πακέτα Συνδρομής</div>
+          <div class="section-sub">
+            Πληρώνεις κάθε μήνα. Καμία προμήθεια πάνω στον μισθό.
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+
+          <div class="price-card">
+            <div class="price-plan">BASIC</div>
+            <div class="price-amount">10€/μήνα</div>
+            <div class="price-desc">
+              Για εργοδότες που θέλουν πρόσβαση σε προσωπικό εστίασης.
+            </div>
+            <div class="feature-list">
+              • Πρόσβαση σε προφίλ υποψηφίων<br/>
+              • 1 αγγελία ενεργή<br/>
+              • Επικοινωνία μέσα από την πλατφόρμα
+            </div>
+            <a class="price-btn" href="talent.html">Δες Υποψηφίους →</a>
+          </div>
+
+          <div class="price-card" style="border-color:var(--yellow);box-shadow:0 24px 48px rgba(250,204,21,0.2);">
+            <div class="price-plan">PRO</div>
+            <div class="price-amount">15€/μήνα</div>
+            <div class="price-desc">
+              Για εργοδότες και εργαζόμενους που θέλουν πλήρη ορατότητα.
+            </div>
+            <div class="feature-list">
+              <span>• Δες ποιός είδε το προφίλ σου</span><br/>
+              • Άμεσο τηλέφωνο / WhatsApp υποψηφίων<br/>
+              • Έως 3 αγγελίες ταυτόχρονα<br/>
+              • Εμφάνιση πιο ψηλά στα αποτελέσματα
+            </div>
+            <a class="price-btn" href="profile.html">Φτιάξε Προφίλ →</a>
+          </div>
+
+          <div class="price-card">
+            <div class="price-plan">ΧΩΡΙΣ ΒΙΟΓΡΑΦΙΚΟ</div>
+            <div class="price-amount">0€</div>
+            <div class="price-desc">
+              Για εργαζόμενους που απλά θέλουν να φαίνονται σε εργοδότες.
+            </div>
+            <div class="feature-list">
+              • Δήλωσε ρόλο (π.χ. Barista)<br/>
+              • Περιοχή & διαθεσιμότητα<br/>
+              • WhatsApp για άμεση επικοινωνία
+            </div>
+            <a class="price-btn" href="profile.html">Δήλωσε Διαθεσιμότητα →</a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div class="logo-badge">SERVIA</div>
+        <div>Δίκτυο Πρόσληψης Εστίασης</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="talent.html">Υποψήφιοι</a>
+        <a href="#pricing">Τιμές</a>
+        <a href="profile.html">Φτιάξε προφίλ</a>
+        <a href="mailto:contact@servia.jobs">contact@servia.jobs</a>
+      </div>
+
+      <div style="margin-top:16px;">
+        SERVIA © 2025 · Πιλοτικό στην Ελλάδα · All rights reserved
+      </div>
+    </footer>
+
+  </body>
+</html>

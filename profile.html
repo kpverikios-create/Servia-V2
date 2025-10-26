@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="el" style="background-color:#0f172a;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SERVIA · Φτιάξε το προφίλ σου</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --yellow:#facc15;
+        --bg:#0f172a;
+        --text:#f8fafc;
+        --muted:#94a3b8;
+        --card:#1e2536;
+        --radius:16px;
+        --border:rgba(148,163,184,0.2);
+      }
+      *{box-sizing:border-box;-webkit-font-smoothing:antialiased;margin:0;}
+      body{
+        background:var(--bg);
+        color:var(--text);
+        font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+        line-height:1.45;
+        min-height:100vh;
+        padding:24px 20px 60px;
+        display:grid;
+        place-content:start center;
+      }
+      .wrapper{
+        width:100%;
+        max-width:480px;
+        background:var(--card);
+        border-radius:var(--radius);
+        border:2px solid var(--border);
+        box-shadow:0 24px 48px rgba(0,0,0,0.6);
+        padding:24px;
+        display:grid;
+        gap:20px;
+      }
+      .title{
+        font-size:1.2rem;
+        font-weight:600;
+        color:var(--text);
+        line-height:1.3;
+      }
+      .sub{
+        font-size:0.9rem;
+        color:var(--muted);
+        line-height:1.4;
+      }
+      .field{
+        display:grid;
+        gap:6px;
+      }
+      .field label{
+        font-size:0.8rem;
+        font-weight:500;
+        color:var(--text);
+      }
+      .field input,
+      .field select{
+        width:100%;
+        background:#0f172a;
+        color:var(--text);
+        font-size:0.9rem;
+        font-weight:500;
+        line-height:1.3;
+        border-radius:8px;
+        border:1px solid var(--border);
+        padding:12px;
+        outline:none;
+      }
+      .cta{
+        background:var(--yellow);
+        color:#000;
+        border-radius:10px;
+        border:2px solid var(--yellow);
+        font-weight:600;
+        font-size:1rem;
+        line-height:1.1;
+        padding:12px 16px;
+        text-align:center;
+        cursor:pointer;
+        box-shadow:0 20px 40px rgba(250,204,21,0.4);
+      }
+      a.cta-link{
+        text-decoration:none;
+        color:#000;
+        display:block;
+        text-align:center;
+        font-weight:600;
+      }
+      .note{
+        font-size:0.75rem;
+        color:var(--muted);
+        line-height:1.4;
+        text-align:center;
+      }
+      .nav-back{
+        text-align:center;
+        font-size:0.8rem;
+      }
+      .nav-back a{
+        color:var(--yellow);
+        text-decoration:none;
+        font-weight:600;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <div>
+        <div class="title">Φτιάξε το προφίλ σου</div>
+        <div class="sub">
+          Χωρίς βιογραφικό. Θα μπορούν να σε βρίσκουν καφέ, μπαρ,
+          εστιατόρια, ξενοδοχεία.
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Όνομα / Πώς να σε φωνάζουμε *</label>
+        <input id="name" placeholder="π.χ. Μαρία" />
+      </div>
+
+      <div class="field">
+        <label>Ρόλος *</label>
+        <select id="role">
+          <option>Barista</option>
+          <option>Σερβιτόρος / Σερβιτόρα</option>
+          <option>Bartender</option>
+          <option>Κουζίνα / Μαγειρείο / Line cook</option>
+          <option>Reception / Front Desk</option>
+          <option>Housekeeping</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Εμπειρία *</label>
+        <select id="exp">
+          <option>&lt; 6 μήνες</option>
+          <option>1-2 χρόνια</option>
+          <option>3+ χρόνια</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Περιοχή που μπορείς να δουλέψεις *</label>
+        <input id="area" placeholder="π.χ. Κέντρο Αθήνας / Γλυφάδα / Μύκονος σεζόν" />
+      </div>
+
+      <div class="field">
+        <label>Διαθεσιμότητα *</label>
+        <select id="avail">
+          <option>Πρωί</option>
+          <option>Βράδυ</option>
+          <option>Full-time</option>
+          <option>Σεζόν</option>
+          <option>Μόνο Σαββατοκύριακο</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Πότε μπορείς να ξεκινήσεις *</label>
+        <select id="start">
+          <option>Άμεσα</option>
+          <option>Αυτή την εβδομάδα</option>
+          <option>Από επόμενη σεζόν</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>WhatsApp / Τηλέφωνο *</label>
+        <input id="phone" placeholder="+30 69xxxxxxx" />
+      </div>
+
+      <div class="field">
+        <label>Instagram (προαιρετικό)</label>
+        <input id="ig" placeholder="@το_instagram_σου" />
+      </div>
+
+      <div
+        class="cta"
+        onclick="
+          const name=document.getElementById('name').value;
+          const role=document.getElementById('role').value;
+          const exp=document.getElementById('exp').value;
+          const area=document.getElementById('area').value;
+          const avail=document.getElementById('avail').value;
+          const startWhen=document.getElementById('start').value;
+          const phone=document.getElementById('phone').value;
+          const ig=document.getElementById('ig').value;
+
+          const message = encodeURIComponent(
+            'ΝΕΟ ΠΡΟΦΙΛ ΥΠΟΨΗΦΙΟΥ (SERVIA)%0A' +
+            'Όνομα: ' + name + '%0A' +
+            'Ρόλος: ' + role + '%0A' +
+            'Εμπειρία: ' + exp + '%0A' +
+            'Περιοχή: ' + area + '%0A' +
+            'Διαθεσιμότητα: ' + avail + '%0A' +
+            'Έναρξη: ' + startWhen + '%0A' +
+            'Τηλέφωνο/WhatsApp: ' + phone + '%0A' +
+            'Instagram: ' + ig
+          );
+
+          window.location.href = 'https://wa.me/306931111415?text=' + message;
+        "
+      >
+        Στείλε το προφίλ μου στη SERVIA →
+      </div>
+
+      <div class="note">
+        Πατώντας το κουμπί ανοίγει WhatsApp με μήνυμα προς τη SERVIA.
+        Δεν δημοσιεύουμε το τηλέφωνό σου δημόσια χωρίς άδεια.
+      </div>
+
+      <div class="nav-back">
+        <a href="index.html">← Πίσω στην αρχική</a>
+      </div>
+    </div>
+
+  </body>
+</html>
